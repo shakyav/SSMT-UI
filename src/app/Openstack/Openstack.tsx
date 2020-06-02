@@ -4,13 +4,14 @@ import { Fetchdata } from '@app/fetchdata/fetchdata';
 import { FetchFilterdata } from '@app/fetchdata/fetchfilterdata';
 //import { TypeaheadSelectInput } from '@app/userform/timeselect';
 import { SampleDashboard } from '@app/userform/dashboard';
+import { ProjectDataFilterForm } from '@app/userform/filterform';
 
 
 const Openstack: React.FunctionComponent<{}> = () => (
 
   <PageSection>
     <Title headingLevel="h1" size="lg">Openshift Cluster Data</Title>
-      <SampleDashboard/>    
+      <ProjectDataFilterForm/>    
   </PageSection>
 )
 

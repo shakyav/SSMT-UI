@@ -17,6 +17,8 @@ import {
 } from '@patternfly/react-core';
 import { Fetchdata } from '@app/fetchdata/fetchdata';
 import { FetchFilterdata } from '@app/fetchdata/fetchfilterdata';
+import { Grid, GridItem } from '@patternfly/react-core';
+
 
 
 class SampleDashboard extends React.Component<{},{value1:string,value2:string,value3:string,value4:string,startDate?:string,endDate?:string,display_component:string}>{
@@ -61,7 +63,7 @@ class SampleDashboard extends React.Component<{},{value1:string,value2:string,va
         const { value1, value2, value3, value4} = this.state;
         let dis_component: {} | null | undefined;
         if (this.state.display_component === 'filter_data') {
-            dis_component=<FetchFilterdata  startDate={value1 + value3} endDate={value2 + value4} />
+            dis_component=<FetchFilterdata  startDate={value1} endDate={value2} />
 
         } else {
            dis_component= <Fetchdata />
@@ -70,6 +72,7 @@ class SampleDashboard extends React.Component<{},{value1:string,value2:string,va
 
         return (
             <React.Fragment>
+
                 <Form isHorizontal>
                     <FormGroup
                         label="start Date"
@@ -80,7 +83,7 @@ class SampleDashboard extends React.Component<{},{value1:string,value2:string,va
                         <TextInput
                             value={value1}
                             isRequired
-                            type="text"
+                            type="date"
                             id="horizontal-form-start-date"
                             aria-describedby="horizontal-form-name-helper"
                             name="horizontal-form-start-date"
@@ -92,31 +95,12 @@ class SampleDashboard extends React.Component<{},{value1:string,value2:string,va
                             value={value2}
                             onChange={this.handleTextInputChange2}
                             isRequired
-                            type="text"
+                            type="date"
                             id="horizontal-form-end-date"
                             name="horizontal-form-end-date"
                         />
                     </FormGroup>
-                    <FormGroup label="start time" isRequired fieldId="horizontal-form-start-time">
-                        <TextInput
-                            value={value3}
-                            onChange={this.handleTextInputChange3}
-                            isRequired
-                            type="text"
-                            id="horizontal-form-start-time"
-                            name="horizontal-form-start-time"
-                        />
-                    </FormGroup>
-                    <FormGroup label="End Time" isRequired fieldId="horizontal-form-end-time">
-                        <TextInput
-                            value={value4}
-                            onChange={this.handleTextInputChange4}
-                            isRequired
-                            type="text"
-                            id="horizontal-form-end-time"
-                            name="horizontal-form-end-time"
-                        />
-                    </FormGroup>
+                    
 
 
                     <ActionGroup>

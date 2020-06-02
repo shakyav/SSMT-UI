@@ -68,10 +68,10 @@ const Fetchdata: React.FunctionComponent<{}> = () => {
 
     // apply filter on cluster_data and store results in searchResults
     React.useEffect(() => {
-        const results = cluster_data.filter(
+        const results = rows.filter(
             cluster_item =>
 
-                cluster_item.namespace.toLowerCase().includes(searchTerm)
+                cluster_item.includes(searchTerm)
 
         );
 
